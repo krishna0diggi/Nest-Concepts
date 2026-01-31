@@ -10,5 +10,6 @@ import { BookMiddleware } from './book.middleware';
 export class BookModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
         consumer.apply(BookMiddleware).forRoutes("book")
+        //  .forRoutes({ path: 'book', method: RequestMethod.GET });
     }
 }
