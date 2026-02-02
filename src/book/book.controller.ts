@@ -1,8 +1,10 @@
-import { Controller, Get, Param, ParseIntPipe, Post } from "@nestjs/common";
+import { Controller, Get, Param, ParseIntPipe, Post, UseGuards } from "@nestjs/common";
+import { BookGuard } from "./book.guard";
 
 @Controller("book")
 export class BookController{
     @Get()
+    @UseGuards(new BookGuard())
     findAllBooks():string{
         return "This action returns all books"
     } 
